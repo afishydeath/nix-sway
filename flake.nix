@@ -22,7 +22,7 @@
         name = "chonk";
       };
       user = {
-        ame = "syn";
+        name = "syn";
         email = "afishydeath@gmail.com";
         stylix.image = ./wallpapers/monokai.png;
         stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
@@ -40,6 +40,7 @@
             ./base/host.nix
             ./hosts/${host.name}
             inputs.stylix.nixosModules.stylix
+            ./base/stylix.nix
           ];
         };
       };
@@ -55,6 +56,7 @@
             inputs.stylix.homeManagerModules.stylix
             ./base/user.nix
             ./users/${user.uname}
+            ./base/stylix.nix
           ];
         };
       };
