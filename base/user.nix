@@ -9,4 +9,12 @@
     homeDirectory = /home/${user.name};
     stateVersion = "24.11";
   };
+
+  wayland.windowManager.sway = {
+    enable = true;
+    config = {
+      modifier = "Mod4";
+      terminal = "kitty";
+    };
+  };
 }
