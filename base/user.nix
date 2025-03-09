@@ -15,6 +15,7 @@
     config = {
       modifier = "Mod4";
       terminal = "kitty";
+      menu = "rofi -show combi -combi-modi \"drun, run\"";
     };
   };
 }
