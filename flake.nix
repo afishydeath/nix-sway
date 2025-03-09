@@ -16,15 +16,17 @@
       ...
     }@inputs:
     let
+      pkgs = nixpkgs;
       host = {
         system = "x86_64-linux";
         hname = "chonk";
       };
       user = {
         uname = "syn";
-        emaill = "afishydeath@gmail.com";
+        email = "afishydeath@gmail.com";
+        stylix.image = ./wallpapers/monokai.png;
+        stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
       };
-      pkgs = nixpkgs;
     in
     {
       nixosConfigurations = {
