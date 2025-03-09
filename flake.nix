@@ -19,10 +19,10 @@
       pkgs = nixpkgs;
       host = {
         system = "x86_64-linux";
-        hname = "chonk";
+        name = "chonk";
       };
       user = {
-        uname = "syn";
+        ame = "syn";
         email = "afishydeath@gmail.com";
         stylix.image = ./wallpapers/monokai.png;
         stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
@@ -32,10 +32,9 @@
       nixosConfigurations = {
         "${host.hname}" = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit (host) system;
-            inherit inputs;
-            inherit (user) uname;
             inherit host;
+            inherit user;
+            inherit inputs;
           };
           modules = [
             ./base/host.nix
@@ -48,9 +47,9 @@
         "${user.uname}" = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
-            inherit (user) uname;
+            inherit user;
+            inherit host;
             inherit inputs;
-            inherit (host) hname;
           };
           modules = [
             inputs.stylix.homeManagerModules.stylix

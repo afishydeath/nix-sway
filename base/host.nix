@@ -1,7 +1,7 @@
-{ hname, pkgs, ... }:
+{ host, pkgs, ... }:
 {
   networking = {
-    hostName = hname;
+    hostName = host.name;
     networkmanager.enable = true;
   };
 
@@ -22,4 +22,5 @@
     "nix-command"
     "flakes"
   ];
+  system.stateVersion = "24.11"; # don't change
 }

@@ -1,12 +1,12 @@
-{ uname, ... }:
+{ user, ... }:
 {
   programs = {
     home-manager.enable = true;
   };
 
   home = {
-    username = uname;
-    homeDirectory = /home/${uname};
+    username = user.name;
+    homeDirectory = /home/${user.name};
     stateVersion = "24.11";
   };
 }
